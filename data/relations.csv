@@ -1,0 +1,8 @@
+left,right,kind,registered_on
+a1,a2,adjacent,2026-05-01
+a2,a3,shared_worker,2026-05-01
+a3,a4,adjacent,2026-05-01
+b1,b2,shared_worker,2026-05-01
+b2,b3,adjacent,2026-05-01
+b3,b4,adjacent,2026-05-01
+a4,b4,shared_worker,2026-05-01

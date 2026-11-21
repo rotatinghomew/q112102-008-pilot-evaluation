@@ -1,5 +1,0 @@
-event_id,person_ref,service_code,occurred_at,grid_ref,source
-X-1,P-1,visit,2026-01-08,G-1,pilot
-X-2,P-2,visit,2026-01-10,G-2,usual
-X-3,P-2,visit,2026-01-17,G-1,spillover
-X-4,P-3,call,2026-01-22,G-2,pilot
