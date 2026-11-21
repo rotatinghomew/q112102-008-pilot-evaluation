@@ -1,0 +1,3 @@
+decision_id,analysis_version,decided_at,action,reason
+D-1,A-1,2026-02-10,continue_small,需要继续观察
+D-2,A-2,2026-02-20,review,补充服务记录

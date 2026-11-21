@@ -1,0 +1,5 @@
+person_ref,rule_version,eligible_from,eligible_to,basis
+P-1,V-1,2026-01-01,,high_need
+P-2,V-1,2026-01-01,,referral
+P-3,V-2,2026-01-15,,new_rule
+P-4,V-1,2026-01-01,2026-01-20,withdrawn
