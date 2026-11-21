@@ -1,0 +1,2 @@
+rubric,windows,min_distinct_per_side,max_adjacent_ratio,max_prior_gap,min_uptake_jump,maturity_days
+r1,3;5;7,3,2.3,0.19,0.15,21

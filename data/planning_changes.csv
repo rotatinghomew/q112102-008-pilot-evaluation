@@ -1,0 +1,4 @@
+id,kind,subject,at
+x1,exception,n2,2026-04-17T09:00
+x2,cancel_trip,t5,2026-04-17T10:00
+x3,void_score_evidence,东岸-02-060-01-a,2026-04-17T11:00

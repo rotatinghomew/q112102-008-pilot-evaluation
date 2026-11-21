@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-FIELDS = {'grids': ['grid', 'block', 'ready_on'], 'relations': ['left', 'right', 'kind', 'registered_on'], 'wave_plan': ['wave', 'invite_on', 'freeze_on', 'max_global', 'seed'], 'quotas': ['wave', 'block', 'quota'], 'assignments': ['wave', 'grid', 'status', 'notified_on'], 'study': ['primary', 'days', 'min_direct_units', 'min_unexposed_units', 'signal'], 'contacts': ['person', 'grid', 'kind', 'at'], 'registrants': ['person', 'grid', 'eligible', 'registered_on'], 'outcomes': ['person', 'status', 'stable', 'observed_on', 'available_on']}
+FIELDS = {'regimes': ['region', 'at', 'cutoff', 'rubric'], 'profile': ['resident', 'region', 'applied_at', 'freeze_on', 'prior_failed', 'mobility', 'exception'], 'score_revisions': ['revision', 'resident', 'score', 'state', 'recorded_at'], 'results': ['resident', 'took_ride', 'abandoned', 'observed_at'], 'analytic_policy': ['rubric', 'windows', 'min_distinct_per_side', 'max_adjacent_ratio', 'max_prior_gap', 'min_uptake_jump', 'maturity_days'], 'plan_policy': ['week', 'budget', 'minimum_gain', 'pilot_slots'], 'planning_requests': ['request', 'region', 'score', 'vehicle', 'start', 'end'], 'trips': ['trip', 'region', 'vehicle', 'start', 'end', 'pool', 'link', 'leg', 'cost'], 'prior_promises': ['id', 'request', 'trips', 'notified_at'], 'planning_changes': ['id', 'kind', 'subject', 'at'], 'proposals': ['id', 'region', 'candidate_cutoff', 'week']}
 
 
 class DataContractTests(unittest.TestCase):

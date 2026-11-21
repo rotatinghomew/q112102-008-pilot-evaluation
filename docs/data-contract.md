@@ -1,16 +1,18 @@
-# 分波邀请与干扰下的试点评估：资料契约
+# 接送资格边界与过渡名额：资料契约
 
-网格为随机分配单位，`block` 为原始区组，`registrants` 为分配前登记人群；年龄等个人资料不进入业务。`wave_plan` 的 `max_global` 是自然波次总容量，`quotas` 指各区组应发邀请数。已经冻结的邀请不能改。可随机化的许可集合由当时可选网格、各区组配额、全域容量、既有邀请及观测支持下限共同界定；每个在许可集合中的完整分配等可能，以公开的 `seed` 和冻结名册复现抽签。对历史波次使用该行冻结日与事实计算，而非后来资料。`relations` 无向；任一端接受提前邀请影响另一端的潜在邻接分组。实际暴露另由 `contacts` 记录。
-`study` 的 `min_direct_units`、`min_unexposed_units` 对每个区组有效：前者要求至少这么多早邀请网格及同量尚未邀请网格，后者只计算既未邀请且在观察窗内无登记邻接/共用网格被邀请的网格。波次角色相对已冻结的早邀请批次，保护直到该批主要结果成熟。主要结局 `stable` 是二元结果，风险差为获益尺度；失访与无记录不等于阴性。`signal` 为扩大考虑的最小获益（百分点）；按许可集重随机化并对未确定结局表明推断界限。完成全部观测以 `days` 为成熟窗，以各波邀请日期为早邀请及其对照的观察起点。
+`regimes` 的 `at` 到下一条同地域生效记录之前适用，`cutoff` 含等号。`score_revisions` 的 `recorded_at` 是评分签发日期；资格分析用申请 `freeze_on` 前最后实际签发的 `initial` 或 `correction`，不能使用后来 `void` 所指向的不再适用证据做当前证据结论，同时可按所知时点复原原判断。`profile` 的 `prior_failed`、`mobility` 为事前特征，评分是整数。`results` 以 `took_ride`、`abandoned` 表示实际使用与成熟结局，空值为未观察，不当作零。比较使用每个片区当期的书面门槛。可由实测相邻取窗与支持范围区分是否具备迁移到拟改变人群的证据；估计方法由分析人员选用，不把一次观察结论外推到未覆盖分数段。
+`analytic_policy` 的 `windows` 为门槛两侧分别以分值之差选取的观测窗（含端点），`min_distinct_per_side` 为每侧最少分数取值，`max_adjacent_ratio` 为门槛相邻分数人数之比（较大除以较小），`max_prior_gap` 为两侧既往弃约率允许差值；`min_uptake_jump` 是接送取得比例差值下限。`plan_policy` 用下降的弃约比例作为正获益，并限制一对有效服务确认窗内新增开支；`pilot_slots` 是维持旧线时每周可增加的最大补证名额。已有承诺和签认例外先占用可匹配车次。`trips` 中 `pool` 相同的车次是同一时段的替代用途，不可并用；`link` 相同的 `leg=first/second` 可构成两段接续，只有前段到达早于后段出发且整个行程落入可用窗口时才算一次；`single` 单段即为完整行程。`vehicle` 是最低乘坐类型，`无障碍` 车型兼容 `常规`，反之不行。报价按实际占用车次相加。所有时段当地时间，左闭右开。
 
 ## 输入表
 
-- `grids.csv`：`grid`、`block`、`ready_on`
-- `relations.csv`：`left`、`right`、`kind`、`registered_on`
-- `wave_plan.csv`：`wave`、`invite_on`、`freeze_on`、`max_global`、`seed`
-- `quotas.csv`：`wave`、`block`、`quota`
-- `assignments.csv`：`wave`、`grid`、`status`、`notified_on`
-- `study.csv`：`primary`、`days`、`min_direct_units`、`min_unexposed_units`、`signal`
-- `contacts.csv`：`person`、`grid`、`kind`、`at`
-- `registrants.csv`：`person`、`grid`、`eligible`、`registered_on`
-- `outcomes.csv`：`person`、`status`、`stable`、`observed_on`、`available_on`
+- `regimes.csv`：`region`、`at`、`cutoff`、`rubric`
+- `profile.csv`：`resident`、`region`、`applied_at`、`freeze_on`、`prior_failed`、`mobility`、`exception`
+- `score_revisions.csv`：`revision`、`resident`、`score`、`state`、`recorded_at`
+- `results.csv`：`resident`、`took_ride`、`abandoned`、`observed_at`
+- `analytic_policy.csv`：`rubric`、`windows`、`min_distinct_per_side`、`max_adjacent_ratio`、`max_prior_gap`、`min_uptake_jump`、`maturity_days`
+- `plan_policy.csv`：`week`、`budget`、`minimum_gain`、`pilot_slots`
+- `planning_requests.csv`：`request`、`region`、`score`、`vehicle`、`start`、`end`
+- `trips.csv`：`trip`、`region`、`vehicle`、`start`、`end`、`pool`、`link`、`leg`、`cost`
+- `prior_promises.csv`：`id`、`request`、`trips`、`notified_at`
+- `planning_changes.csv`：`id`、`kind`、`subject`、`at`
+- `proposals.csv`：`id`、`region`、`candidate_cutoff`、`week`

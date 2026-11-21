@@ -1,0 +1,7 @@
+trip,region,vehicle,start,end,pool,link,leg,cost
+t1,东岸,无障碍,09:10,10:00,P1,,single,120
+t2,西岸,无障碍,09:10,10:00,P1,,single,100
+t3,西岸,常规,10:00,11:15,P2,,single,60
+t4,西岸,常规,09:40,10:05,P3,X,first,40
+t5,西岸,常规,10:20,10:40,P4,X,second,45
+t6,东岸,常规,10:00,11:00,P5,,single,70
